@@ -1,0 +1,60 @@
+def max_occurred_char(string):
+    char_count = {}  # Dictionary to store character counts
+
+    # Count occurrences of each character in the string
+    for char in string:
+        if char == " ":  # Skip spaces
+            continue
+
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    # Find the character with the maximum count
+    max_count = 0
+    max_char = ""
+    for char, count in char_count.items():
+        if count > max_count:
+            max_count = count
+            max_char = char
+
+    return max_char
+
+text = input("Enter the text : ")
+result = max_occurred_char(text)
+print("Text: " + text)
+print("Maximum Occurring Character: " + result)
+
+
+
+//--------------------------------------------------//
+
+
+
+def cyclic_difference(letter1, letter2):
+    # Convert letters to lowercase for consistency
+    letter1 = letter1.lower()
+    letter2 = letter2.lower()
+
+    # Calculate the cyclic difference
+    difference = (ord(letter2) - ord(letter1)) % 26
+
+    return difference
+
+# Example usage
+letter1 = result
+letter2 = 'E'
+difference = cyclic_difference(letter1, letter2)
+print("The cyclic difference is:", difference)
+
+
+
+//-----------------------------------------------------//
+
+text = input("Enter the text: ")
+s = difference
+
+print("Cipher: " + encrypt(text, s))
+
+
