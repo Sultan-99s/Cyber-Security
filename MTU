@@ -1,0 +1,23 @@
+import subprocess
+
+def find_mtu(destination):
+    packet_size = 1500
+    while packet_size >= 1200:
+        command = f"ping {destination} -f -l {packet_size}"
+        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        _, error = process.communicate()
+
+        if process.returncode == 0:
+            return packet_size
+        else:
+            packet_size -= 1
+
+    print("MTU not found.")
+    return None
+
+# Example usage
+destination = "google.com"
+
+mtu = find_mtu(destination)
+if mtu:
+    print("Maximum Transfer Unit (MTU):", mtu)
