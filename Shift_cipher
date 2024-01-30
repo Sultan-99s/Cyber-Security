@@ -15,7 +15,6 @@ def encrypt(text, s):
 
     return result
 
-
 text = input("Enter the text: ")
 s = int(input("How many positions to shift: "))
 print("Text: " + text)
