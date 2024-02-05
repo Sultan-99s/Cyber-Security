@@ -3,7 +3,6 @@ def toLowerCase(text):
 
 # Function to remove all spaces in a string
 
-
 def removeSpaces(text):
 	newText = ""
 	for i in text:
@@ -15,7 +14,6 @@ def removeSpaces(text):
 
 # Function to group 2 elements of a string
 # as a list element
-
 
 def Diagraph(text):
 	Diagraph = []
@@ -29,7 +27,6 @@ def Diagraph(text):
 
 # Function to fill a letter in a string element
 # If 2 letters in the same string matches
-
 
 def FillerLetter(text):
 	k = len(text)
@@ -56,7 +53,6 @@ list1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm',
 		'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 # Function to generate the 5x5 key square matrix
-
 
 def generateKeyTable(word, list1):
 	key_letters = []
@@ -102,7 +98,6 @@ def encrypt_RowRule(matr, e1r, e1c, e2r, e2c):
 
 	return char1, char2
 
-
 def encrypt_ColumnRule(matr, e1r, e1c, e2r, e2c):
 	char1 = ''
 	if e1r == 4:
@@ -118,7 +113,6 @@ def encrypt_ColumnRule(matr, e1r, e1c, e2r, e2c):
 
 	return char1, char2
 
-
 def encrypt_RectangleRule(matr, e1r, e1c, e2r, e2c):
 	char1 = ''
 	char1 = matr[e1r][e2c]
@@ -127,7 +121,6 @@ def encrypt_RectangleRule(matr, e1r, e1c, e2r, e2c):
 	char2 = matr[e2r][e1c]
 
 	return char1, char2
-
 
 def encryptByPlayfairCipher(Matrix, plainList):
 	CipherText = []
@@ -149,7 +142,6 @@ def encryptByPlayfairCipher(Matrix, plainList):
 		cipher = c1 + c2
 		CipherText.append(cipher)
 	return CipherText
-
 
 text_Plain = 'instruments'
 text_Plain = removeSpaces(toLowerCase(text_Plain))
